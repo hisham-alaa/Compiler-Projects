@@ -1,1 +1,2 @@
 H:\Projects\Compiler Projects\compiler1\x64\Debug\compiler1.exe
+H:\Projects\Compiler-Projects\compiler1\x64\Debug\compiler1.exe

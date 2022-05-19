@@ -1,11 +1,2 @@
 < open parenthesis >
 < node num , 1 >
-< coma >
-< node num , 1 >
-< close parenthesis >
-< coma >
-< open parenthesis >
-< node num , 2 >
-< coma >
-< color , red >
-< close parenthesis >

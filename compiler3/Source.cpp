@@ -1,4 +1,9 @@
-/*#include<iostream>
+
+//a Scannar for generating the stream of tokens for coloring graph 
+//using handcoded and checking as a parser
+
+/*
+#include<iostream>
 #include<fstream>
 #include<string>
 #include<algorithm>
@@ -92,7 +97,8 @@ int main() {
 
 
 
-// scannar 
+//a Scannar for generating the stream of tokens for coloring graph 
+//using handcoded
 
 /*
 #include<iostream>
