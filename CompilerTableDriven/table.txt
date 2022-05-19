@@ -1,0 +1,7 @@
+*  -  /  + $
+
+q2 q4 q3 q1
+q1 q4 q3 q2
+q3 q2 q1 q4
+q2 q1 q4 q3
+q2 q1 q4 q0 $
