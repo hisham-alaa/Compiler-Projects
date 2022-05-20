@@ -1,0 +1,17 @@
+for_iteration
+open_paranthesis
+identifier ,i
+assignment_operator
+value ,2
+semi_colon
+identifier ,i
+LT_operator
+value ,10
+semi_colon
+identifier ,i
+increment_operator +
+assignment_operator
+value ,3
+close_paranthesis
+open_curly_parenthesis
+close_curly_parenthesis

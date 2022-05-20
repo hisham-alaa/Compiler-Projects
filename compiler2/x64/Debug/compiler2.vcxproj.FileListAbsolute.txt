@@ -1,2 +1,0 @@
-H:\Compiler projects\compiler2\x64\Debug\compiler2.exe
-H:\Projects\Compiler Projects\compiler2\x64\Debug\compiler2.exe

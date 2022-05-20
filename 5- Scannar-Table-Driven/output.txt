@@ -1,0 +1,17 @@
+token open-peranthesis (
+token vertex d
+token coma ,
+token vertex d
+token close-paranthesis )
+token coma ,
+token open-peranthesis (
+token vertex d
+token coma ,
+token vertex d
+token coma ,
+token color l
+token color l
+token error j
+token vertex d
+token error >
+token error m

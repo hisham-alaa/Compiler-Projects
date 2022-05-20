@@ -1,22 +1,26 @@
 #include<iostream>
-#include<map>
-#include<algorithm>
+#include<fstream>
+#include<unordered_map>
+#include<string>
+#include<vector>
+
 using namespace std;
-int main() {
 
-	int n;
-	cin >> n;
-	map<string, int>largest;
-	string temp;
+ifstream in("in.txt");
+string tmp, curstate;
+unordered_map<string, string> finalstates;
 
-	for (int i = 0; i < n; i++){
-		cin >> temp;
-		largest.emplace(temp, 0);
-		largest.at(temp) = largest.at(temp) + 1;
+int main(){	
+
+	char ch;
+	while (!in.eof())
+	{
+		ch = in.get();
+		ch = (isalpha(ch) ? 'l' : ch);
+		ch = (isdigit(ch) ? 'd' : ch);
+		cout << ch << endl;
 	}
-	auto max= std::max_element(largest.begin(), largest.end(), [](const auto& x, const auto& y)
-		{ return x.second < y.second; });
-	cout << max->first;
+
 	return 0;
 }
 

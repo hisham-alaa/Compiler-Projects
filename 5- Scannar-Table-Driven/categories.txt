@@ -1,0 +1,5 @@
+q1 open-peranthesis
+q2 close-paranthesis
+q3 coma
+q4 vertex
+q5 color
