@@ -1,2 +1,3 @@
 H:\Projects\Compiler Projects\compiler3\x64\Debug\compiler3.exe
 H:\Projects\Compiler-Projects\compiler3\x64\Debug\compiler3.exe
+H:\Projects\Compiler-Projects\3- Scannar-Hand-coded\x64\Debug\compiler3.exe

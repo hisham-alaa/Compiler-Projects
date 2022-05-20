@@ -100,7 +100,7 @@ int main() {
 //a Scannar for generating the stream of tokens for coloring graph 
 //using handcoded
 
-/*
+
 #include<iostream>
 #include<fstream>
 #include<string>
@@ -177,7 +177,7 @@ int main() {
     o.close();
     return 0;
 }
-*/
+
 
 
 
