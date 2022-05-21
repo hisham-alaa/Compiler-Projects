@@ -1,2 +1,5 @@
 ﻿  Source.cpp
+H:\Projects\Compiler-Projects\temp\Source.cpp(99,16): warning C4553: '==': result of expression not used; did you intend '='?
+H:\Projects\Compiler-Projects\temp\Source.cpp(104,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+H:\Projects\Compiler-Projects\temp\Source.cpp(63): warning C4715: 'token_name': not all control paths return a value
   temp.vcxproj -> H:\Projects\Compiler-Projects\temp\x64\Debug\temp.exe

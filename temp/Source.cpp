@@ -1,5 +1,165 @@
 #include<iostream>
 #include<fstream>
+#include<string>
+#include<map>
+#include<vector>
+using namespace std;
+
+
+enum Token {
+	OPEN_BRANTHESES, CLOSE_BARANTHESES, COMMA, ID, COLOR, END_OF_FILE, ERROR
+};
+
+string s;
+ifstream input("in.txt");
+Token current_token;
+ofstream output("out.txt");
+Token Scanner()
+{
+	char c;
+	s = "";
+	input.get(c);
+	while (c == ' ')input.get(c);
+	if (input.eof()) { s = "$"; return END_OF_FILE; }
+	else if (c == '(') { s = c; return OPEN_BRANTHESES; }
+	else if (c == ')') { s = c; return CLOSE_BARANTHESES; }
+	else if (c == ',') { s = c; return COMMA; }
+	else if (isalpha(c))
+	{
+		s += c;
+		input.get(c);
+		while (isalpha(c) && !input.eof())
+		{
+			s += c;
+			input.get(c);
+		}
+		input.putback(c);
+		if (s == "red" || s == "green" || s == "blue" || s == "yellow" || s == "white")return COLOR;
+	}
+	else if (isdigit(c))
+	{
+		s += c;
+		input.get(c);
+		while (isdigit(c) && !input.eof())
+		{
+			s += c;
+			input.get(c);
+		}
+		input.putback(c);
+		return ID;
+	}
+	
+	return ERROR;
+}
+
+string token_name(Token t)
+{
+	if (t == OPEN_BRANTHESES) return "< OPEN_BRANTHESES";
+	else if (t == CLOSE_BARANTHESES) return "< CLOSE_BARANTHESES";
+	else if (t == COMMA) return "< COMMA";
+	else if (t == ID) return "< ID";
+	else if (t == COLOR) return "< COLOR";
+	else if (t == END_OF_FILE) return "< END_OF_FILE";
+}
+
+void match(Token t)
+{
+	if (t == current_token)
+	{
+		output << token_name(t) << " , " << s << " > is expected\n";
+	}
+	else
+	{
+		output << "ERROR" << " , " << s << "  is NOT expected\n";
+		return;
+	}
+	current_token = Scanner();
+}
+
+/*
+S      = (ID,SECOND) SS
+SS     = ,S | e
+ID     = NUMBER IID
+IID    = ID  | e
+NUMBER = 0|1|2|3|4|5|6|7|8|9
+SECOND = ID   | COLOR
+COLOR  = red | green | blue | yellow | white
+*/
+
+void number();
+void iid();
+void s1();
+void ss();
+void id1();
+void color();
+void second();
+void start()
+{
+	current_token == Scanner();
+	s1();
+	match(END_OF_FILE);
+}
+void main()
+{
+	start();
+	system("pause");
+}
+
+void s1()
+{
+	match(OPEN_BRANTHESES);
+	id1();
+	match(COMMA);
+	second();
+	match(CLOSE_BARANTHESES);
+	ss();
+}
+
+void ss()
+{
+	if (current_token == COMMA)
+	{
+		match(COMMA);
+		s1();
+	}
+}
+void id1()
+{
+	number(); iid();
+}
+void iid()
+{
+	if (current_token == ID)
+		id1();
+}
+void number()
+{
+	match(ID);
+}
+void color()
+{
+	match(COLOR);
+}
+void second()
+{
+	if (current_token == ID)
+		id1();
+	else if (current_token == COLOR)
+		color();
+	else
+	{
+		output << "ERROR" << " , " << s << "  is NOT expected\n";
+		return;
+	}
+
+}
+
+
+
+
+
+/*#include<iostream>
+#include<fstream>
 #include<unordered_map>
 #include<string>
 #include<vector>
@@ -23,7 +183,7 @@ int main(){
 
 	return 0;
 }
-
+*/
 
 
 //#include <conio.h>

@@ -1,0 +1,6 @@
+< OPEN_BRANTHESES , ( > is expected
+< ID , 1 > is expected
+< COMMA , , > is expected
+< ID , 1 > is expected
+< CLOSE_BARANTHESES , ) > is expected
+ERROR , (  is NOT expected

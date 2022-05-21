@@ -1,0 +1,12 @@
+
+E = T R $
+R = + T R $
+R = e $
+T = F Y $
+Y = * F Y $
+Y = e $
+F = - id $
+F = id Z $
+Z = ++ Z $
+Z = -- Z $
+Z = e $
