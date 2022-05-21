@@ -1,1 +1,2 @@
 H:\Projects\Compiler-Projects\FirstAndFollow\x64\Debug\FirstAndFollow.exe
+H:\Projects\Compiler-Projects\7- First-Follow-Sets\x64\Debug\FirstAndFollow.exe

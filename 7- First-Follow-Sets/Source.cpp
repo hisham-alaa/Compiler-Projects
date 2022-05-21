@@ -14,7 +14,7 @@ vector<vector<string>> tmpvector2 ;
 map<string , vector<vector<string>>>::iterator itr;
 
 map<string, set<string>>allfirst,allfollow ;
-string nonterminal,tmp,last;
+string nonterminal,tmp,start;
 
 void getproductions() 
 {
@@ -24,6 +24,7 @@ void getproductions()
 		in >> nonterminal; //terminal
 
 		if (productions.empty()) {
+			start = nonterminal;
 			tmpset.insert("$");
 			allfollow.emplace(nonterminal, tmpset);
 		}
@@ -68,7 +69,6 @@ void getproductions()
 					tmpset.clear();
 				}
 	}
-
 }
 
 set<string>first(string s)
@@ -118,7 +118,18 @@ set<string>follow(string s)
 			for (auto k : j)
 			{
 				count++;
-				if (k == s) found = true;
+				if (k == s) 
+				{
+					found = true;
+					if (i.first == start && count == j.size())
+					{
+						tmpset = follow(i.first);
+						tmpset = follow(i.first);
+						res.insert(tmpset.begin(), tmpset.end());
+						res.erase("e");
+						tmpset.clear();
+					}
+				}
 				if (found && k != s)
 				{
 					tmpset = first(k);
@@ -148,8 +159,10 @@ int main()
 {
 	getproductions();
 
-	tmpset = follow("T");
-	cout << "T";
+	string n;
+	cin >> n;
+	tmpset = follow(n);
+	cout << n;
 	for (auto i : tmpset)
 		cout << " -> " << i << endl;
 	cout << endl;
